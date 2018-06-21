@@ -1,0 +1,28 @@
+sudo: false
+language: c
+jobs:
+  include:
+    - os: linux
+      dist: trusty
+      addons: 
+        apt:
+          sources: 
+            - ubuntu-toolchain-r-test
+          packages: 
+            - bsdtar
+      script:
+        - make
+    - os: linux
+      addons: 
+        apt:
+          packages: 
+            - bsdtar
+      script:
+        - make
+    - os: osx
+      script:
+        - make
+before_script:
+  - cd $TRAVIS_BUILD_DIR
+notifications:
+  email: false

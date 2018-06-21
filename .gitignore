@@ -1,0 +1,8 @@
+#Check-Zip
+.travis*
+!.travis.yml
+*.sh
+appveyor*
+!appveyor.yml
+
+
